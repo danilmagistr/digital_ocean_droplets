@@ -1,0 +1,13 @@
+{% extends "display_droplets/base.html" %}
+{% block body_block %}
+<div class="container">
+  <div class="jumbotron">
+    <h1>Welcome to visit here!</h1>
+    {% if user.is_authenticated %}
+        <h2>Hello {{ user.username }} <a href="{% url 'Droplet View' %}">Please Click here to Manage Droplets</a></h2>
+    {% else %}
+        <h2>If you don't have account, please register and login</h2>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
